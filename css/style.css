@@ -203,7 +203,7 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 2rem;
-    margin: -5rem 2rem 0 2rem;
+    margin: 0 2rem 0 2rem;
 }
 
 .movie__more {
@@ -218,7 +218,7 @@ body {
 
 .movie__info {
     justify-self: start;
-    align-items: center;
+    align-items: end;
 }
 
 img {
@@ -300,6 +300,14 @@ color: var(--text-description);
     line-height: 2rem;
     color: var(--text-yellow);
     text-decoration: none;
+}
+
+.invisible {
+    display: none;
+}
+
+.container__carousel {
+    margin-top: -3rem;
 }
 
 
