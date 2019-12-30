@@ -21,11 +21,25 @@ const controlSearch = async () => {
         await state.search.getData();
     };
 
-    console.log(state.search.results);
+    //displaying carousel if there is respond from server
+    if(state.search.results){
+        console.log(state.search.results);
+        DOM.containerCarousel.classList.remove('invisible');
+    }
+
+    searchView.renderResults(state.search.results);
     
 }
 
 DOM.searchForm.addEventListener('submit', ev => {
+    //prevent reloading the page on submit
     ev.preventDefault();
+    //rolling dice on button click by adding and removing class
+    searchView.rollDice();
+
+    searchView.prepareUI();
+
+
     controlSearch();
+
 });
