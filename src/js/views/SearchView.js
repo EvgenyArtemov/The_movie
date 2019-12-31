@@ -24,20 +24,30 @@ export const prepareUI = () => {
     DOM.searchForm.classList.add('search__form__up');
 };
 
+//convert list of genres to string
 const genresPrint = (arr) => {
     let res = arr.map(el => {
-        for(let obj in genres){
-            if(obj.id == el){
-                return obj.name
-            }
-        }
+      for (let i = 0; i < genres.length; i++) {
+         if(el == genres[i].id){
+             return genres[i].name
+         }
+      }
     })
+    //if empty array occurs
+    if(res.length == 0){
+        res = 'Unspecified';
+    }
+
     return res;
 };
 
 const renderMovie = movie => {
-
-    const releaseYear = movie.release_date.slice(0, 4);
+    let releaseYear;
+    if(movie.release_date){
+        releaseYear = movie.release_date.slice(0, 4);
+    }else{
+        releaseYear = 'Not specified'
+    }
 
     const html = `
         <div class="carousel-item">
