@@ -39,7 +39,6 @@ DOM.searchForm.addEventListener('submit', ev => {
 
     searchView.prepareUI();
 
-
     controlSearch();
 
 });

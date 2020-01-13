@@ -25,10 +25,10 @@ body {
     position: relative;
     margin: 5rem auto;
     max-width: 1280px;
-    max-height: 720px;
-    height: 100vh;
+    min-height: 720px;
+    /* height: 70vh; */
     background-color: var(--main-bg-color);
-    background-image: url(/img/back.png);
+    background-image: url(../img/back.png);
     overflow: hidden;
 }
 
@@ -37,9 +37,14 @@ body {
 
 
 .info__btn {
+    width: 30px;
     position: absolute;
     top: 4rem;
     right: 3.2rem;
+}
+
+.info__btn:hover {
+    cursor: pointer;
 }
 
 
@@ -208,10 +213,10 @@ body {
 
 .container__search__results {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
     grid-column-gap: 2rem;
-    margin: 0 2rem 0 2rem;
+    margin: 0 8rem 0 2rem;
 }
 
 .movie__more {
@@ -269,7 +274,7 @@ body {
     display: inline-block;
     width: 18px;
     height: 18px;
-    /* background-image: url(/img/star.jpg); */
+    background-image: url(../img/star.svg);
 }
 
 .movie__info__title {
@@ -296,7 +301,7 @@ font-style: normal;
 font-weight: normal;
 font-size: 1.2rem;
 line-height: 1.8rem;
-margin: 2rem auto 0 auto;
+margin: 2rem auto 5rem auto;
 color: var(--text-description);
 }
 
@@ -308,6 +313,7 @@ color: var(--text-description);
     line-height: 2rem;
     color: var(--text-yellow);
     text-decoration: none;
+    margin-bottom: 3rem;
 }
 
 .movie__info__more:hover {

@@ -14,7 +14,29 @@
 <body>
     <div class="wrapper">
 
-        <img class="info__btn" src="img/info.svg">
+        <img class="info__btn" data-toggle="modal" data-target=".bd-example-modal-lg" src="img/info.svg">
+
+
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+          
+                <div class="modal-header">
+                  <h4 class="modal-title" id="myLargeModalLabel">Info</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  *Enter random word to find 20 random movies
+
+                  *Hit enter one more time to get another 20 movies
+
+                  *Switch between movies with arrow keys on your keyboard
+                </div>
+              </div>
+            </div>
+          </div>
 
         <div class="main__logo__container ">
 
@@ -38,32 +60,6 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
                 <div class="carousel-inner">
-
-                  <!-- <div class="carousel-item active">
-
-                    <div class="container__search__results">
-
-                    <div class="movie__poster">
-                        <img src="./img/poster.jpg" alt="movie poster">
-                    </div>
-        
-                    <section class="movie__info">
-                        <p class="movie__info__year">2018</p>
-                        <p class="movie__info__genres">96 min</p>
-                        <p class="movie__info__rating">6.6
-                            <span class="rating__star">
-                                <img class="rating__star" src="./img/star.svg">
-                            </span>
-                        </p>
-                        <h1 class="movie__info__title">Cafe Society</h1>
-                        <span class="line"></span>
-                        <p class="movie__info__description">In the 1930s, a Bronx native moves to Hollywood and falls in love with a young woman who is seeing a married man.</p>
-                        <a href="" class="movie__info__more">read more...</a>
-                    </section>
-            
-                </div>
-                    
-                  </div> -->
 
                 </div>
 

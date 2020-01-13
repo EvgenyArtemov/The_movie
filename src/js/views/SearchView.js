@@ -22,6 +22,8 @@ export const prepareUI = () => {
     });
     //moving search form up
     DOM.searchForm.classList.add('search__form__up');
+    //cleaning window from OLD results
+    DOM.carouselInner.innerHTML = '';
 };
 
 //convert list of genres to string
@@ -32,7 +34,7 @@ const genresPrint = (arr) => {
              return genres[i].name
          }
       }
-    })
+    }).join(', ')
     //if empty array occurs
     if(res.length == 0){
         res = 'Unspecified';
@@ -41,12 +43,23 @@ const genresPrint = (arr) => {
     return res;
 };
 
+// const checkPoster = (val) => {
+//     let path = '../../img/noposter.jpg';
+//     if()
+// }
+
 const renderMovie = movie => {
     let releaseYear;
     if(movie.release_date){
         releaseYear = movie.release_date.slice(0, 4);
     }else{
-        releaseYear = 'Not specified'
+        releaseYear = 'No title available'
+    }
+
+    let path = '../src/img/noposter.jpg';
+
+    if(movie.poster_path){
+        path = `https://image.tmdb.org/t/p/w342${movie.poster_path}" alt="movie poster`
     }
 
     const html = `
@@ -55,21 +68,18 @@ const renderMovie = movie => {
             <div class="container__search__results">
         
                 <div class="movie__poster">
-                    <img src="https://image.tmdb.org/t/p/w342${movie.poster_path}" alt="movie poster">
+                    <img src="${path}">
                 </div>
             
                 <section class="movie__info">
                     <p class="movie__info__year">${releaseYear}</p>
                     <p class="movie__info__genres">${genresPrint(movie.genre_ids)}</p>
                     <p class="movie__info__rating">${movie.popularity}
-                        <span class="rating__star">
-                            <img class="rating__star" src="./img/star.svg">
-                        </span>
+                        <span class="rating__star"></span>
                     </p>
                     <h1 class="movie__info__title">${movie.title}</h1>
                     <span class="line"></span>
                     <p class="movie__info__description">${movie.overview}</p>
-                    <a href="" class="movie__info__more">read more...</a>
                 </section>
     
             </div>
